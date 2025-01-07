@@ -1,4 +1,14 @@
-<h1>Estás viendo la página privada</h1>
-<span>Usuario conectado: {{obtenerUsuario()}}</span>
-<h4><button (click)="llamarBackend()">Llamar backend</button></h4>
-<h4>Response backend: {{mostrarResponseBackend() | json}}</h4>
+<div class="pagina-privada-container">
+    <h1>Estás viendo la página privada</h1>
+    <div class="usuario-conectado">
+        <span>Usuario conectado: {{obtenerUsuario()}}</span>
+    </div>
+    <div class="llamar-backend">
+        <h4><button (click)="llamarBackend()">Llamar backend</button></h4>
+    </div>
+    <div class="response-backend">
+        <h4>Response backend:</h4>
+        <pre>{{mostrarResponseBackend() | json}}</pre>
+    </div>    
+</div>
+

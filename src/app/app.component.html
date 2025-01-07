@@ -1,15 +1,21 @@
-<table>
-  <tr>
-    <td><button (click)="iniciarSesion()" *ngIf="!usuarioEstaConectado()">Iniciar Sesión</button></td>
-    <td><button (click)="cerrarSesion()" *ngIf="usuarioEstaConectado()">Cerrar Sesión</button></td>
-    <td><a routerLink="pagina-publica">Pagina_publica</a></td>
-    <td><a routerLink="pagina-privada">Pagina_privada</a></td>
-  </tr>
-</table>
-<div *ngIf="usuarioEstaConectado()">
-  <h3>Sesión iniciada correctamente</h3>
+<div class="navbar">
+  <table>
+    <tr>
+      <td><button (click)="iniciarSesion()" *ngIf="!usuarioEstaConectado()">Iniciar Sesión</button></td>
+      <td><button (click)="cerrarSesion()" *ngIf="usuarioEstaConectado()">Cerrar Sesión</button></td>
+      <td><a routerLink="pagina-publica">Pagina_publica</a></td>
+      <td><a routerLink="pagina-privada">Pagina_privada</a></td>
+    </tr>
+  </table>
 </div>
-<div *ngIf="!usuarioEstaConectado()">
-  <h3>Sesión NO iniciada</h3>
+<div class="estado">
+  <div *ngIf="usuarioEstaConectado()">
+    <h3>Sesión iniciada correctamente</h3>
+  </div>
+  <div *ngIf="!usuarioEstaConectado()">
+    <h3>Sesión NO iniciada</h3>
+  </div>
 </div>
-<router-outlet></router-outlet>
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>
